@@ -1,0 +1,7 @@
+# ESP32-P4 — 16MB Flash, No OTA, Factory Boot
+# Name,       Type,  SubType,  Offset,    Size,      Flags
+nvs,           data,  nvs,      0x9000,    0x5000,
+app0,          app,   factory,  0x10000,   0xC00000,
+spiffs,        data,  spiffs,   0xC10000,  0x3D0000,
+nvs_encrypted, data,  nvs,      0xFE0000,  0x10000,
+coredump,      data,  coredump, 0xFF0000,  0x10000,

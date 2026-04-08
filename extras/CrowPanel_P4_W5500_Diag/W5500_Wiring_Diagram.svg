@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Consolas, monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#FFD700"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" rx="12" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" fill="#FFD700" font-size="20" font-weight="bold">W5500 Ethernet → CrowPanel ESP32-P4 Wireless Header</text>
+  <text x="450" y="58" text-anchor="middle" fill="#888" font-size="13">Minimum 6 wires (SPI + Power) — 8 wires recommended</text>
+
+  <!-- CrowPanel Board -->
+  <rect x="50" y="90" width="320" height="380" rx="10" fill="#0d1b2a" stroke="#2a4a6a" stroke-width="2"/>
+  <text x="210" y="118" text-anchor="middle" fill="#64B5F6" font-size="16" font-weight="bold">CrowPanel ESP32-P4</text>
+  <text x="210" y="138" text-anchor="middle" fill="#607D8B" font-size="11">Wireless Module Header (2x7)</text>
+
+  <!-- GPIO pins on CrowPanel -->
+  <rect x="290" y="165" width="65" height="28" rx="4" fill="#1B5E20"/>
+  <text x="322" y="184" text-anchor="middle" fill="#76FF03" font-size="12">GPIO 8</text>
+
+  <rect x="290" y="205" width="65" height="28" rx="4" fill="#1B5E20"/>
+  <text x="322" y="224" text-anchor="middle" fill="#76FF03" font-size="12">GPIO 7</text>
+
+  <rect x="290" y="245" width="65" height="28" rx="4" fill="#1B5E20"/>
+  <text x="322" y="264" text-anchor="middle" fill="#76FF03" font-size="12">GPIO 6</text>
+
+  <rect x="290" y="285" width="65" height="28" rx="4" fill="#1B5E20"/>
+  <text x="322" y="304" text-anchor="middle" fill="#76FF03" font-size="12">GPIO 10</text>
+
+  <rect x="290" y="325" width="65" height="28" rx="4" fill="#0D47A1"/>
+  <text x="322" y="344" text-anchor="middle" fill="#42A5F5" font-size="12">GPIO 53</text>
+
+  <rect x="290" y="365" width="65" height="28" rx="4" fill="#0D47A1"/>
+  <text x="322" y="384" text-anchor="middle" fill="#42A5F5" font-size="12">GPIO 54</text>
+
+  <rect x="290" y="405" width="65" height="28" rx="4" fill="#B71C1C"/>
+  <text x="322" y="424" text-anchor="middle" fill="#EF5350" font-size="12">3.3V</text>
+
+  <rect x="290" y="445" width="65" height="28" rx="4" fill="#37474F"/>
+  <text x="322" y="464" text-anchor="middle" fill="#BDBDBD" font-size="12">GND</text>
+
+  <!-- W5500 Module -->
+  <rect x="550" y="90" width="300" height="380" rx="10" fill="#0d1b2a" stroke="#6a2a2a" stroke-width="2"/>
+  <text x="700" y="118" text-anchor="middle" fill="#EF5350" font-size="16" font-weight="bold">W5500 Ethernet Module</text>
+  <text x="700" y="138" text-anchor="middle" fill="#607D8B" font-size="11">SPI Interface + RJ45</text>
+
+  <!-- W5500 pins -->
+  <rect x="555" y="165" width="65" height="28" rx="4" fill="#1B5E20"/>
+  <text x="587" y="184" text-anchor="middle" fill="#76FF03" font-size="12">SCK</text>
+
+  <rect x="555" y="205" width="65" height="28" rx="4" fill="#1B5E20"/>
+  <text x="587" y="224" text-anchor="middle" fill="#76FF03" font-size="12">MISO</text>
+
+  <rect x="555" y="245" width="65" height="28" rx="4" fill="#1B5E20"/>
+  <text x="587" y="264" text-anchor="middle" fill="#76FF03" font-size="12">MOSI</text>
+
+  <rect x="555" y="285" width="65" height="28" rx="4" fill="#1B5E20"/>
+  <text x="587" y="304" text-anchor="middle" fill="#76FF03" font-size="12">SCS</text>
+
+  <rect x="555" y="325" width="65" height="28" rx="4" fill="#0D47A1"/>
+  <text x="587" y="344" text-anchor="middle" fill="#42A5F5" font-size="12">INT</text>
+
+  <rect x="555" y="365" width="65" height="28" rx="4" fill="#0D47A1"/>
+  <text x="587" y="384" text-anchor="middle" fill="#42A5F5" font-size="12">RST</text>
+
+  <rect x="555" y="405" width="65" height="28" rx="4" fill="#B71C1C"/>
+  <text x="587" y="424" text-anchor="middle" fill="#EF5350" font-size="12">VCC</text>
+
+  <rect x="555" y="445" width="65" height="28" rx="4" fill="#37474F"/>
+  <text x="587" y="464" text-anchor="middle" fill="#BDBDBD" font-size="12">GND</text>
+
+  <!-- RJ45 icon -->
+  <rect x="720" y="200" width="110" height="70" rx="6" fill="#263238" stroke="#546E7A" stroke-width="1.5"/>
+  <text x="775" y="230" text-anchor="middle" fill="#78909C" font-size="10">RJ45</text>
+  <text x="775" y="248" text-anchor="middle" fill="#78909C" font-size="10">Ethernet</text>
+  <rect x="740" y="270" width="70" height="12" rx="2" fill="#455A64"/>
+
+  <!-- Wires — Required (solid, gold) -->
+  <line x1="355" y1="179" x2="555" y2="179" stroke="#FFD700" stroke-width="2.5"/>
+  <line x1="355" y1="219" x2="555" y2="219" stroke="#FFD700" stroke-width="2.5"/>
+  <line x1="355" y1="259" x2="555" y2="259" stroke="#FFD700" stroke-width="2.5"/>
+  <line x1="355" y1="299" x2="555" y2="299" stroke="#FFD700" stroke-width="2.5"/>
+  <line x1="355" y1="419" x2="555" y2="419" stroke="#FF1744" stroke-width="2.5"/>
+  <line x1="355" y1="459" x2="555" y2="459" stroke="#78909C" stroke-width="2.5"/>
+
+  <!-- Wires — Optional (dashed, blue) -->
+  <line x1="355" y1="339" x2="555" y2="339" stroke="#42A5F5" stroke-width="2" stroke-dasharray="8,4"/>
+  <line x1="355" y1="379" x2="555" y2="379" stroke="#42A5F5" stroke-width="2" stroke-dasharray="8,4"/>
+
+  <!-- Signal labels on wires -->
+  <text x="455" y="173" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">SCK</text>
+  <text x="455" y="213" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">MISO</text>
+  <text x="455" y="253" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">MOSI</text>
+  <text x="455" y="293" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">CS</text>
+  <text x="455" y="333" text-anchor="middle" fill="#90CAF9" font-size="10">INT (optional)</text>
+  <text x="455" y="373" text-anchor="middle" fill="#90CAF9" font-size="10">RST (optional)</text>
+  <text x="455" y="413" text-anchor="middle" fill="#FF8A80" font-size="11" font-weight="bold">3.3V</text>
+  <text x="455" y="453" text-anchor="middle" fill="#BDBDBD" font-size="11" font-weight="bold">GND</text>
+
+  <!-- Legend -->
+  <rect x="50" y="485" width="850" height="28" rx="6" fill="#0d1b2a"/>
+  <line x1="70" y1="499" x2="110" y2="499" stroke="#FFD700" stroke-width="2.5"/>
+  <text x="118" y="504" fill="#CCC" font-size="11">Required (6 wires min)</text>
+  <line x1="310" y1="499" x2="350" y2="499" stroke="#42A5F5" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="358" y="504" fill="#CCC" font-size="11">Optional (+2 for reliability)</text>
+  <line x1="580" y1="499" x2="620" y2="499" stroke="#FF1744" stroke-width="2.5"/>
+  <text x="628" y="504" fill="#CCC" font-size="11">Power</text>
+  <line x1="720" y1="499" x2="760" y2="499" stroke="#78909C" stroke-width="2.5"/>
+  <text x="768" y="504" fill="#CCC" font-size="11">Ground</text>
+</svg>
