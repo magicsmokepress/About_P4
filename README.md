@@ -1,4 +1,4 @@
-# Programming the ESP32-P4: Companion Code
+# Programming the ESP32-P4: Companion Code v.1.0
 
 <p align="center">
   <img src="cover.png" alt="Programming the ESP32-P4 Book Cover" width="400">
