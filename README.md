@@ -102,7 +102,7 @@ This book was born from not wanting to learn a new programming language and need
 
 If this code helped you build something, learn something, or saved you from staring at a blank screen for another hour - you can say thanks by grabbing the book or buying me a beer:
 
-- **Buy the book:** [smokemagic.gumroad.com/l/yfcnzu](https://smokemagic.gumroad.com/l/rclkvd))
+- **Buy the book:** [smokemagic.gumroad.com/l/yfcnzu](https://smokemagic.gumroad.com/l/yfcnzu))
 - **Buy me a beer:** [paypal.me/magicsmokepress](https://paypal.me/magicsmokepress)
 - **Buy me a coffee:** [buymeacoffee.com/magicsmokepress](https://buymeacoffee.com/magicsmokepress)
 
