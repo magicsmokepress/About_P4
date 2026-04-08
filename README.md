@@ -14,7 +14,7 @@ The ESP32-P4 is Espressif's most powerful chip - and its most misunderstood. A d
 
 As of early 2026, there are no other books, barely any tutorials, and almost no Arduino documentation for this chip. The official examples target ESP-IDF. The vendor-provided Arduino samples are board-specific and poorly documented.
 
-This book fills that gap. **35 chapters and 5 appendices** take you from first blink to TensorFlow Lite person detection, covering:
+This book fills that gap. **36 chapters and 5 appendices** take you from first blink to TensorFlow Lite person detection, covering:
 
 - **Display & UI** - MIPI-DSI initialization, SPI displays (LovyanGFX + ILI9488), LVGL fundamentals, multi-screen dashboards, multitouch
 - **Connectivity** - WiFi (STA mode with config portal), BLE scanning, Ethernet (W5500 SPI + native RMII), MQTT
@@ -115,3 +115,5 @@ Za vas par koji ste se našli tu, slučajno ili ne - pretpostavljam da znate eng
 ## License
 
 Copyright (c) 2026 Marko Vasilj. The example code in this repository is released under the [MIT License](LICENSE) - you are free to use, modify, and distribute it. The only requirement is that you comply with the licenses of the third-party libraries the sketches depend on (LVGL, LovyanGFX, ESP-DSP, PubSubClient, etc.). See the LICENSE file for details.
+
+Written with AI assistance. All code tested on real hardware by a human.
