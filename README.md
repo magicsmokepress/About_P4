@@ -1,18 +1,9 @@
 # Programming the ESP32-P4: Companion Code v.1.0
-
-<p align="center">
-  <img src="cover.png" alt="Programming the ESP32-P4 Book Cover" width="400">
-</p>
-
 Companion Arduino sketches for *Programming the ESP32-P4: Practical Projects with Arduino IDE*.
-
-By **Marko Vasilj** - Published by **Magic Smoke Press**.
 
 ## About the Book
 
 The ESP32-P4 is Espressif's most powerful chip - and its most misunderstood. A dual-core 400 MHz RISC-V processor with 16 or 32 MB of PSRAM (depending on board variant), MIPI-DSI display output, USB 2.0 OTG, and hardware AI acceleration. It has no WiFi. No Bluetooth. No wireless at all. Instead, it delegates all radio work to a companion ESP32-C6 over SDIO - a fundamentally different architecture that breaks every assumption you've built from years of ESP32 development.
-
-As of early 2026, there are no other books, barely any tutorials, and almost no Arduino documentation for this chip. The official examples target ESP-IDF. The vendor-provided Arduino samples are board-specific and poorly documented.
 
 This book fills that gap. **36 chapters and 5 appendices** take you from first blink to TensorFlow Lite person detection, covering:
 
