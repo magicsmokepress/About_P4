@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="cover.png" alt="Programming the ESP32-P4 Book Cover" width="400">
+</p>
+
 # Programming the ESP32-P4: Companion Code v.1.0
 Companion Arduino sketches for *Programming the ESP32-P4: Practical Projects with Arduino IDE*.
 
