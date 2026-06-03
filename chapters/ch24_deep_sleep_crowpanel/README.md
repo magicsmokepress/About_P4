@@ -4,7 +4,7 @@
 Puts the ESP32-P4 into deep sleep with configurable wake sources (timer, GPIO touch interrupt). Measures and displays current draw before and after sleep, and persists data across sleep cycles using RTC memory.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 
