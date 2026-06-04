@@ -4,7 +4,7 @@
 Covers core LVGL 9.x concepts: widgets, styles, events, and layouts. Builds a multi-widget UI with buttons, labels, sliders, and a scroll view to demonstrate the LVGL object model and style system.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 
@@ -22,7 +22,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Install `esp_display_panel` and `LVGL`

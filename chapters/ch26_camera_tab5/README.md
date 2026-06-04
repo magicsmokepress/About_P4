@@ -1,7 +1,13 @@
 # Chapter 26: Camera (Tab5 SC202CS)
 
 ## Overview
-Captures frames from the Tab5's onboard SC202CS camera via MIPI-CSI and displays a live preview on the LVGL screen. The camera and display share the MIPI-DSI PHY — this chapter documents the initialization order that makes them coexist.
+Staged bring-up of the Tab5's onboard SC202CS camera over MIPI-CSI, exactly as the book chapter walks it:
+
+1. **`camera.ino`** - step 0: boot sanity check. Proves the board, core version, and display come up before any camera code is involved ("Tab5 ready!" on screen).
+2. **`ch26_camera_sketch2.ino`** - the full pipeline: SCCB sensor init over Wire, 1-lane CSI capture at 1280x720 RAW8, ISP in RAW8 passthrough, software Bayer demosaic to RGB565, live view via M5GFX.
+3. **`ch26_camera_sketch3.ino`** - adds the auto-exposure loop (center-weighted metering every 60 frames).
+
+The complete, fully annotated viewfinder lives in [`extras/Tab5_Camera_Viewfinder/`](../../extras/Tab5_Camera_Viewfinder/) together with the diagnostic sketches used to find the camera in the first place (`Tab5_I2C_BruteForce.ino`, `Tab5_Minimal_Test.ino`).
 
 ## Hardware Required
 - M5Stack Tab5 (ESP32-P4 + SC202CS camera)
@@ -9,34 +15,28 @@ Captures frames from the Tab5's onboard SC202CS camera via MIPI-CSI and displays
 - Arduino IDE 2.x
 
 ## Libraries
-- [esp_display_panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)
-- [LVGL 9.x](https://lvgl.io)
-- esp_camera (built-in to ESP32 Arduino core)
+- M5Unified + M5GFX (M5Stack)
+- Camera path uses ESP-IDF drivers built into the core: `esp_cam_ctlr` (CSI), `driver/isp`, `esp_ldo_regulator`
+- **Not used:** esp_camera (no P4 support), LVGL (display goes through M5GFX here)
 
 ## Board Settings
 ```
-Board:         M5Stack Tab5 (or ESP32P4 Dev Module)
-Arduino Core:  esp32 boards 3.2.6
-USB Mode:      Hardware CDC and JTAG
+Board:         M5Stack Tab5 (M5Stack board manager)
+Boards:        M5Stack 3.2.6
 PSRAM:         OPI PSRAM
 ```
 
 ## Boards Tested
 - ✅ M5Stack Tab5
 
-## How to Use
-1. Open `camera.ino`, upload to Tab5
-2. Live camera preview appears on display
-3. Tap the **Capture** button to freeze the frame
-
 ## Key Concepts
-- SC202CS MIPI-CSI sensor initialization
-- Shared MIPI PHY init order (display must be first)
-- Frame buffer in PSRAM
-- LVGL canvas → display pipeline for camera frames
-- Arduino boards 3.2.6 has everything needed (camera + WiFi + display)
+- SC202CS (marketed SC2356): SCCB address 0x36 on SDA=7 / SCL=8 - **not** the internal bus
+- 1-lane MIPI CSI at 576 Mbps (2-lane produces zero frames)
+- IO expanders on internal bus (31/32) control camera reset - **never call `Wire.end()`**, it de-powers them and the frame buffer fills with constant 0x10
+- LDO3 at 2.5V powers the CSI PHY
+- ISP RAW8 passthrough + software Bayer demosaic (hardware demosaic is ESP-IDF-only)
+- Exposure registers must be written before stream-on
 
----
 
 ## Getting the Book
 

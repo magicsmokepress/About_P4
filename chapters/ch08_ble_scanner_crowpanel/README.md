@@ -4,7 +4,7 @@
 Scans for BLE advertisements and displays discovered devices with RSSI and advertised name in an LVGL list. Uses NimBLE-Arduino for the Bluetooth stack on ESP32-P4.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 
@@ -23,7 +23,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Install `NimBLE-Arduino` via Library Manager

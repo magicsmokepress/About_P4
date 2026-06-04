@@ -4,7 +4,7 @@
 Reads lux values from a BH1750 light sensor over I2C and displays them on an LVGL bar graph that updates in real time. Demonstrates single-byte I2C command protocol without a dedicated library.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - BH1750 (GY-30) module
@@ -25,7 +25,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Wire GY-30 to I2C1 header

@@ -4,7 +4,7 @@
 Auto-detects BME280 (temperature + humidity + pressure) or BMP280 (temperature + pressure only) on the I2C1 header and adapts the UI accordingly. Uses the legacy `driver/i2c.h` API to share the bus safely with the GT911 touch controller.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - BME280 or BMP280 module
@@ -26,7 +26,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Wire BME/BMP280 to I2C1 header (GPIO 45/46)

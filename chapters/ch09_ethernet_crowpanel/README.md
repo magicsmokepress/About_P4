@@ -4,7 +4,7 @@
 Full Ethernet chapter covering both the W5500 SPI module (reliable, external) and the onboard RMII/IP101 PHY on boards that include it. Establishes a TCP connection and fetches a page to verify link-layer connectivity.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - W5500 SPI Ethernet module (connected to VSPI header)
@@ -25,7 +25,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Wire W5500 to SPI header (MOSI/MISO/SCK/CS + INT)

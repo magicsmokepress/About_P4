@@ -4,7 +4,7 @@
 Captures audio from an INMP441 MEMS microphone over I2S and displays a live VU meter and waveform on the LVGL display. Also logs peak amplitude to Serial for threshold calibration.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - INMP441 I2S microphone module
@@ -25,7 +25,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Wire INMP441 to I2S GPIO pins (see `#define MIC_SCK`, etc.)

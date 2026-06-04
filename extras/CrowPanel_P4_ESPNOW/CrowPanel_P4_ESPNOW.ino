@@ -24,7 +24,8 @@
  * Alternatives for peer-to-peer communication:
  *   - BLE (confirmed working via C6 co-processor)
  *   - WiFi UDP broadcast (uses supported WiFi APIs, needs router)
- *   - Community C6 firmware (github: esp32-p4-c6-espnow-enabler)
+ *   - Community C6 firmware (github: esp32-p4-c6-espnow-enabler;
+ *     installs official esp-hosted slave v2.6.7 - examples are ESP-IDF)
  *
  * This sketch is kept as documentation of the limitation.
  * It will NOT compile due to the missing linker symbols.

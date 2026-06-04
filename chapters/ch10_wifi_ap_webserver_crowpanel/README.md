@@ -4,7 +4,7 @@
 A WiFi configuration portal: the ESP32-P4 starts in AP mode briefly to accept SSID/password via a web form, saves credentials to NVS, then reconnects as STA. Includes a fallback timeout so it reverts to STA if no config is received.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 
@@ -25,7 +25,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Open `wifi_config_portal.ino`

@@ -4,7 +4,7 @@
 Uses the ESP32-P4 USB OTG peripheral in host mode to enumerate a connected USB HID keyboard or mouse. Displays keystrokes/button events on the LVGL screen in real time.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - USB-A OTG adapter (USB-C OTG to USB-A)
@@ -25,7 +25,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Connect OTG adapter + USB keyboard to CrowPanel USB-C port

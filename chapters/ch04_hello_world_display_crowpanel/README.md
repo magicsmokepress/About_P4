@@ -4,7 +4,7 @@
 The first runnable sketch for the CrowPanel: initializes the EK79007 DSI panel and GT911 touch controller, draws an LVGL label, and prints touch coordinates to Serial. Establishes the boilerplate that all subsequent chapters build on.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 
@@ -22,7 +22,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Install `esp_display_panel` and `LVGL` via Arduino Library Manager

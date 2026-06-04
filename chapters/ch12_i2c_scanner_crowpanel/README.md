@@ -4,7 +4,7 @@
 Scans all I2C addresses (0x00–0x7F) on both I2C buses and displays found devices on the LVGL display with their hex addresses. Useful as a hardware diagnostic before connecting any I2C sensor.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - Any I2C sensor connected to the I2C1 header (GPIO 45/46)
@@ -23,7 +23,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Open `i2c_scanner.ino`

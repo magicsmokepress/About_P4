@@ -4,7 +4,7 @@
 Reads 6-axis IMU data (3-axis accelerometer + 3-axis gyroscope) from an MPU-6050 over I2C and visualizes pitch/roll on an LVGL graphical horizon indicator. Also logs raw values to Serial for calibration.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - MPU-6050 module
@@ -25,7 +25,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Wire MPU-6050 to I2C1 header

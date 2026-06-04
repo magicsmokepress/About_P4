@@ -4,7 +4,7 @@
 Reads temperature and humidity from a DHT11 sensor on a single GPIO line and displays live readings on an LVGL gauge and label. A gentle introduction to 1-Wire protocol sensors before moving to I2C sensors in later chapters.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - DHT11 sensor module
@@ -26,7 +26,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Install `DHT sensor library` and `Adafruit Unified Sensor`

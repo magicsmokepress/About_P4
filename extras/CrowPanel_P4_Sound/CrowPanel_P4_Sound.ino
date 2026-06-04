@@ -5,7 +5,7 @@
  *   BCLK  = GPIO 22
  *   LRCLK = GPIO 21
  *   SDATA = GPIO 23
- *   AMP_EN = GPIO 30 (active HIGH to enable amplifier)
+ *   AMP_EN = GPIO 30 (active LOW to enable amplifier)
  *
  * Features:
  *   - Tone generator (sine wave) at selectable frequencies

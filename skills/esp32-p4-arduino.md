@@ -70,7 +70,7 @@ Identify by ANY of:
 | 1 | **PSRAM set to OPI?** | Most common crash cause. 1024x600x16bit framebuffer = 1.2MB, exceeds 768KB SRAM | Tools > PSRAM > **OPI PSRAM** |
 | 2 | **WiFi.setPins() before WiFi.mode()?** | Driver initializes on wrong GPIOs if order is reversed | Move setPins() call above mode() |
 | 3 | **3-second delay after WiFi.mode()?** | C6 SDIO bridge needs stabilization time | Add `delay(3000)` after `WiFi.mode()` |
-| 4 | **SD card init after display init?** | LDO4 dependency on CrowPanel -- SD GPIOs need display init first | Call display init before SD_MMC.begin() |
+| 4 | **SD/display init order matches the source sketch?** | SD and display share LDO4 on CrowPanel -- init order is part of tested behavior | Keep the order of the sketch you started from (ch18/ch19 sketches mount SD first) |
 | 5 | **lv_conf.h exists with LV_COLOR_DEPTH=16?** | LVGL won't compile without it; wrong depth = garbled colors | Copy template to libraries/ root, set depth to 16 |
 | 6 | **Partition scheme = Huge APP?** | Default 1.3MB too small; LVGL projects need 1.5-2.5MB | Tools > Partition > Huge APP (3MB No OTA/1MB SPIFFS) |
 | 7 | **delay(2000) at start of setup()?** | USB CDC enumeration delay -- early prints lost | First line of setup() |
@@ -250,7 +250,7 @@ lv_tick_set_cb((lv_tick_get_cb_t)millis);
 | 25 | W5500 RST | Free if no Ethernet |
 | 30 | Audio AMP enable | Active LOW |
 | 31 | Backlight PWM | |
-| 39, 43, 44 | SD Card | Init after display (LDO4) |
+| 39, 43, 44 | SD Card | Shares LDO4 with display - keep tested init order (ch18 mounts SD first) |
 | 40, 42 | Touch RST/INT | |
 | 45, 46 | Touch I2C | |
 | 54 | C6 WiFi enable | OUTPUT HIGH before WiFi.mode() |
@@ -630,10 +630,10 @@ lv_tick_set_cb((lv_tick_get_cb_t)millis);
 
 ### 6.6 SD Card (1 issue)
 
-#### G-S1: SD Card Must Initialize AFTER Display
-- **Symptom:** SD card mount fails silently, or initializing SD corrupts display
-- **Cause:** Display and SD card share LDO4 on CrowPanel. MIPI-DSI driver configures LDO4 during display init. SD_MMC.begin() before display init = wrong voltage levels.
-- **Fix:** Always: `init_display()` FIRST, then `init_sd_card()`. Never reverse. Single most common CrowPanel forum issue.
+#### G-S1: SD/Display Init Order Is Part of Tested Behavior
+- **Symptom:** SD card mount fails silently, or the display never comes up, after init calls were reordered. No error message either way.
+- **Cause:** Display and SD card share LDO4 on CrowPanel. Whichever driver initializes second inherits the rail state the first one left.
+- **Fix:** Keep the init order of the working sketch you started from. The tested ch18/ch19 sketches mount SD first (`SD_MMC.begin()` before display init). If a reordered sketch loses SD or display, restore the original order first.
 - **Boards:** CrowPanel
 
 ---

@@ -4,7 +4,7 @@
 A deep dive into the ESP32-P4 chip: dual RISC-V cores, 32 MB OPI PSRAM, MIPI-DSI, USB OTG, and the differences from ESP32-S3. This chapter explains why the P4 behaves differently from other ESP32 variants and what that means for your code.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 
@@ -21,7 +21,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Read this chapter in the book for architecture context

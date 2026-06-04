@@ -4,7 +4,7 @@
 This chapter walks through setting up Arduino IDE 2.x for ESP32-P4 development. It covers installing the ESP32 boards package, configuring board settings for the CrowPanel, and verifying your toolchain with a minimal sketch.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 
@@ -23,7 +23,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Install ESP32 boards package in Arduino IDE

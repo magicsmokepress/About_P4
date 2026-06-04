@@ -4,7 +4,7 @@
 Connects to WiFi, synchronizes time with an NTP server using `configTime()`, and displays a live digital and analog clock on the LVGL screen. Handles time zone offsets and DST.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - Two USB-C cables (recommended for stable WiFi)
@@ -24,7 +24,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Edit `ntp_clock.ino`: set `WIFI_SSID` and `WIFI_PASS`

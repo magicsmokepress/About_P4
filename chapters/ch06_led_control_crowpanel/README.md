@@ -4,7 +4,7 @@
 Controls the CrowPanel's onboard LED via GPIO and PWM. Adds an LVGL slider to adjust brightness in real time, demonstrating the connection between LVGL input events and hardware output.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - (Optional) External LED + 220Ω resistor on GPIO header
@@ -23,7 +23,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Open `led_control.ino`

@@ -4,7 +4,7 @@
 Runs sensor reading and UI update on separate FreeRTOS tasks pinned to different cores (Core 0 and Core 1). Uses a queue and mutex to pass data safely between tasks, eliminating the `in_blocking_io` freeze pattern.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - BME280 sensor (I2C1: GPIO 45/46) — optional, sketch uses simulated data if absent
@@ -23,7 +23,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Open `freertos.ino`, upload

@@ -4,7 +4,7 @@
 Connects the CrowPanel to an MQTT broker, publishes sensor readings on a schedule, and subscribes to a command topic. Demonstrates the publish/subscribe pattern with ArduinoJson payload encoding.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - MQTT broker (Mosquitto on local network or HiveMQ cloud)
@@ -26,7 +26,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Install `PubSubClient` and `ArduinoJson`

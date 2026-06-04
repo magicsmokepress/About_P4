@@ -4,7 +4,7 @@
 Demonstrates the GT911's multitouch capability (up to 5 simultaneous touch points) with three gesture types: raw point visualization, pinch-to-zoom, and two-finger pan. Swipe left/right with one finger to switch between demo tabs.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 
@@ -22,7 +22,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Open `multitouch.ino`, upload

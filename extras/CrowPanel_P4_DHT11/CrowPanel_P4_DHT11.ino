@@ -1,7 +1,7 @@
 /**
  * CrowPanel Advanced 7" ESP32-P4 — DHT11 Temperature & Humidity
  *
- * Reads a DHT11 sensor on GPIO 9 (wireless module header, right side)
+ * Reads a DHT11 sensor on GPIO 2 (wireless module header, right side)
  * and displays temperature + humidity on screen via LVGL.
  *
  * Wiring (wireless module header):

@@ -4,7 +4,7 @@
 Plays a sine wave tone and a WAV file from PSRAM via I2S audio output. Demonstrates the ESP32-P4 I2S peripheral with an external DAC or MAX98357A amplifier module.
 
 ## Hardware Required
-- CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 - USB-C power cable (2A minimum)
 - Arduino IDE 2.x
 - MAX98357A I2S amplifier module (or similar)
@@ -26,7 +26,7 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 ```
 
 ## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow ESP32-2432S028R)
+- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
 1. Wire MAX98357A to I2S GPIO pins (see `#define I2S_BCLK`, etc.)
