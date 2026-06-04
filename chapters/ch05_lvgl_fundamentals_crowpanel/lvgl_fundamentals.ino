@@ -4,8 +4,8 @@
 using namespace esp_panel::drivers;
 
 // ─── Display Timings ───────────────────────────────────────────────
-#define LCD_WIDTH            1024
-#define LCD_HEIGHT           600
+#define DISPLAY_WIDTH            1024
+#define DISPLAY_HEIGHT           600
 #define LCD_DSI_LANE_NUM     2
 #define LCD_DSI_LANE_RATE    1000
 #define LCD_DPI_CLK_MHZ      52
@@ -24,11 +24,11 @@ using namespace esp_panel::drivers;
 #define LCD_BL_ON_LEVEL      1
 
 // ─── Touch (GT911) ─────────────────────────────────────────────────
-#define TOUCH_I2C_SDA        45
-#define TOUCH_I2C_SCL        46
+#define TOUCH_SDA        45
+#define TOUCH_SCL        46
 #define TOUCH_I2C_FREQ       (400 * 1000)
-#define TOUCH_RST_IO         40
-#define TOUCH_INT_IO         42
+#define TOUCH_RST         40
+#define TOUCH_INT         42
 
 // ─── LVGL draw buffer ──────────────────────────────────────────────
 #define LVGL_BUF_LINES       60        // Number of lines per flush
@@ -79,7 +79,7 @@ void setup()
     BusDSI *bus = new BusDSI(
         LCD_DSI_LANE_NUM, LCD_DSI_LANE_RATE,
         LCD_DPI_CLK_MHZ, LCD_COLOR_BITS,
-        LCD_WIDTH, LCD_HEIGHT,
+        DISPLAY_WIDTH, DISPLAY_HEIGHT,
         LCD_DPI_HPW, LCD_DPI_HBP, LCD_DPI_HFP,
         LCD_DPI_VPW, LCD_DPI_VBP, LCD_DPI_VFP,
         LCD_DSI_PHY_LDO_ID
@@ -88,7 +88,7 @@ void setup()
     assert(bus->begin());
 
     // ── 2. LCD (EK79007) ────────────────────────────────────────────
-    g_lcd = new LCD_EK79007(bus, LCD_WIDTH, LCD_HEIGHT,
+    g_lcd = new LCD_EK79007(bus, DISPLAY_WIDTH, DISPLAY_HEIGHT,
                             LCD_COLOR_BITS, LCD_RST_IO);
     assert(g_lcd->begin());
 
@@ -101,7 +101,7 @@ void setup()
     // ── 4. Touch (GT911 over I2C) ───────────────────────────────────
     Serial.println("Initializing touch...");
     BusI2C *touch_bus = new BusI2C(
-        TOUCH_I2C_SCL, TOUCH_I2C_SDA,
+        TOUCH_SCL, TOUCH_SDA,
         (BusI2C::ControlPanelFullConfig)
             ESP_PANEL_TOUCH_I2C_CONTROL_PANEL_CONFIG(GT911)
     );
@@ -109,8 +109,8 @@ void setup()
     touch_bus->configI2C_PullupEnable(true, true);
 
     g_touch = new TouchGT911(
-        touch_bus, LCD_WIDTH, LCD_HEIGHT,
-        TOUCH_RST_IO, TOUCH_INT_IO
+        touch_bus, DISPLAY_WIDTH, DISPLAY_HEIGHT,
+        TOUCH_RST, TOUCH_INT
     );
     bool touch_ok = g_touch->begin();
     Serial.println(touch_ok ? "  Touch OK"
@@ -120,12 +120,12 @@ void setup()
     lv_init();
 
     // Create display driver (tick source added in Chapter 6)
-    size_t buf_size = LCD_WIDTH * LVGL_BUF_LINES * sizeof(lv_color_t);
+    size_t buf_size = DISPLAY_WIDTH * LVGL_BUF_LINES * sizeof(lv_color_t);
     uint8_t *buf1 = (uint8_t *)heap_caps_malloc(buf_size,
                                                  MALLOC_CAP_SPIRAM);
     assert(buf1);
 
-    lvgl_disp = lv_display_create(LCD_WIDTH, LCD_HEIGHT);
+    lvgl_disp = lv_display_create(DISPLAY_WIDTH, DISPLAY_HEIGHT);
     lv_display_set_flush_cb(lvgl_disp, lvgl_flush_cb);
     lv_display_set_buffers(lvgl_disp, buf1, NULL, buf_size,
                            LV_DISPLAY_RENDER_MODE_PARTIAL);

@@ -23,8 +23,8 @@
 using namespace esp_panel::drivers;
 
 // ─── Display config ───────────────────────────────────────────────
-#define LCD_WIDTH 1024
-#define LCD_HEIGHT 600
+#define DISPLAY_WIDTH 1024
+#define DISPLAY_HEIGHT 600
 #define LCD_DSI_LANE_NUM 2
 #define LCD_DSI_LANE_RATE 1000
 #define LCD_DPI_CLK_MHZ 52
@@ -39,11 +39,11 @@ using namespace esp_panel::drivers;
 #define LCD_RST_IO -1
 #define LCD_BL_IO 31
 #define LCD_BL_ON_LEVEL 1
-#define TOUCH_I2C_SDA 45
-#define TOUCH_I2C_SCL 46
+#define TOUCH_SDA 45
+#define TOUCH_SCL 46
 #define TOUCH_I2C_FREQ (400 * 1000)
-#define TOUCH_RST_IO 40
-#define TOUCH_INT_IO 42
+#define TOUCH_RST 40
+#define TOUCH_INT 42
 #define LVGL_BUF_LINES 60
 
 // ─── Globals ──────────────────────────────────────────────────────
@@ -106,14 +106,14 @@ static void init_hardware() {
     BusDSI *bus = new BusDSI(
         LCD_DSI_LANE_NUM, LCD_DSI_LANE_RATE,
         LCD_DPI_CLK_MHZ, LCD_COLOR_BITS,
-        LCD_WIDTH, LCD_HEIGHT,
+        DISPLAY_WIDTH, DISPLAY_HEIGHT,
         LCD_DPI_HPW, LCD_DPI_HBP, LCD_DPI_HFP,
         LCD_DPI_VPW, LCD_DPI_VBP, LCD_DPI_VFP,
         LCD_DSI_PHY_LDO_ID);
     bus->configDpiFrameBufferNumber(1);
     assert(bus->begin());
 
-    g_lcd = new LCD_EK79007(bus, LCD_WIDTH, LCD_HEIGHT,
+    g_lcd = new LCD_EK79007(bus, DISPLAY_WIDTH, DISPLAY_HEIGHT,
                             LCD_COLOR_BITS, LCD_RST_IO);
     assert(g_lcd->begin());
 
@@ -123,24 +123,24 @@ static void init_hardware() {
     assert(bl->on());
 
     BusI2C *touch_bus = new BusI2C(
-        TOUCH_I2C_SCL, TOUCH_I2C_SDA,
+        TOUCH_SCL, TOUCH_SDA,
         (BusI2C::ControlPanelFullConfig)
             ESP_PANEL_TOUCH_I2C_CONTROL_PANEL_CONFIG(GT911));
     touch_bus->configI2C_FreqHz(TOUCH_I2C_FREQ);
     touch_bus->configI2C_PullupEnable(true, true);
-    g_touch = new TouchGT911(touch_bus, LCD_WIDTH, LCD_HEIGHT,
-                             TOUCH_RST_IO, TOUCH_INT_IO);
+    g_touch = new TouchGT911(touch_bus, DISPLAY_WIDTH, DISPLAY_HEIGHT,
+                             TOUCH_RST, TOUCH_INT);
     g_touch->begin();
 
     lv_init();
     lv_tick_set_cb((lv_tick_get_cb_t)millis);
     size_t buf_size =
-        LCD_WIDTH * LVGL_BUF_LINES * sizeof(lv_color_t);
+        DISPLAY_WIDTH * LVGL_BUF_LINES * sizeof(lv_color_t);
     uint8_t *buf1 = (uint8_t *)heap_caps_malloc(
         buf_size, MALLOC_CAP_SPIRAM);
     assert(buf1);
 
-    lvgl_disp = lv_display_create(LCD_WIDTH, LCD_HEIGHT);
+    lvgl_disp = lv_display_create(DISPLAY_WIDTH, DISPLAY_HEIGHT);
     lv_display_set_flush_cb(lvgl_disp, lvgl_flush_cb);
     lv_display_set_buffers(lvgl_disp, buf1, NULL, buf_size,
                            LV_DISPLAY_RENDER_MODE_PARTIAL);
@@ -407,7 +407,7 @@ static void build_ui() {
 
     // Network list
     net_list = lv_obj_create(scr);
-    lv_obj_set_size(net_list, LCD_WIDTH - 40, 400);
+    lv_obj_set_size(net_list, DISPLAY_WIDTH - 40, 400);
     lv_obj_align(net_list, LV_ALIGN_TOP_MID, 0, 80);
     lv_obj_set_style_bg_color(net_list,
         lv_color_hex(0x0F0F23), 0);
@@ -422,7 +422,7 @@ static void build_ui() {
 
     // Password panel (hidden)
     pwd_panel = lv_obj_create(scr);
-    lv_obj_set_size(pwd_panel, LCD_WIDTH, LCD_HEIGHT);
+    lv_obj_set_size(pwd_panel, DISPLAY_WIDTH, DISPLAY_HEIGHT);
     lv_obj_set_style_bg_color(pwd_panel,
         lv_color_hex(0x1A1A2E), 0);
     lv_obj_set_style_bg_opa(pwd_panel, LV_OPA_90, 0);
@@ -447,7 +447,7 @@ static void build_ui() {
         &lv_font_montserrat_16, 0);
 
     kb = lv_keyboard_create(pwd_panel);
-    lv_obj_set_size(kb, LCD_WIDTH - 40, 340);
+    lv_obj_set_size(kb, DISPLAY_WIDTH - 40, 340);
     lv_obj_align(kb, LV_ALIGN_BOTTOM_MID, 0, -10);
     lv_keyboard_set_textarea(kb, pwd_ta);
     lv_obj_add_event_cb(kb, kb_event_cb,
