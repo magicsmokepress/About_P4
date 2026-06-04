@@ -1,7 +1,7 @@
 # Chapter 13: DHT11 Temperature & Humidity
 
 ## Overview
-Reads temperature and humidity from a DHT11 sensor on a single GPIO line and displays live readings on an LVGL gauge and label. A gentle introduction to 1-Wire protocol sensors before moving to I2C sensors in later chapters.
+Reads temperature and humidity from a DHT11 sensor on a single GPIO line and displays live readings on an LVGL dashboard with comfort-zone color coding. The twist: the ESP32-P4's 400 MHz clock is too fast for the usual loop-counting DHT code, so this sketch bit-bangs the protocol with the esp_timer hardware timer instead of a sensor library.
 
 ## Hardware Required
 - CrowPanel Advanced 7" (Elecrow, ESP32-P4)
@@ -14,7 +14,8 @@ Reads temperature and humidity from a DHT11 sensor on a single GPIO line and dis
 ## Libraries
 - [esp_display_panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)
 - [LVGL 9.x](https://lvgl.io)
-- [DHT sensor library](https://github.com/adafruit/DHT-sensor-library) by Adafruit
+
+No DHT library required — the single-wire protocol is implemented in the sketch itself (~45 lines), timed with `esp_timer_get_time()` so it works at any CPU clock.
 
 ## Board Settings
 ```
@@ -29,16 +30,16 @@ Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
 - ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
 
 ## How to Use
-1. Install `DHT sensor library` and `Adafruit Unified Sensor`
-2. Wire DHT11 DATA pin to GPIO (see `#define DHT_PIN` in sketch)
-3. Open `dht11.ino`, upload
-4. Display shows temperature and humidity, updating every 2s
+1. Wire DHT11 DATA to IO2 (see `#define DHT11_PIN 2` in the sketch), VCC to 3.3V, GND to GND
+2. Open `dht11.ino`, upload
+3. Display shows temperature and humidity, updating every 2 s; the status line counts reads vs. checksum errors
+4. Serial monitor prints the pull-up sanity check at boot (idle line must read HIGH)
 
 ## Key Concepts
-- DHT single-wire protocol timing
-- Adafruit DHT library read() return values
-- LVGL arc gauge update from sensor callback
-- Handling checksum errors gracefully
+- DHT single-wire protocol timing (~26 µs HIGH = 0, ~70 µs HIGH = 1)
+- Why 400 MHz breaks loop-counted timing, and hardware-timer measurement with `esp_timer_get_time()`
+- Checksum verification and graceful error counting
+- Pull-up verification at startup
 
 ---
 
