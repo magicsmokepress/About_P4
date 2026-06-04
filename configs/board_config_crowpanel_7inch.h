@@ -90,28 +90,4 @@ using namespace esp_panel::drivers;
 #define LVGL_BUF_LINES         (DISPLAY_HEIGHT / 10)
 #define LVGL_BUF_SIZE          (DISPLAY_WIDTH * LVGL_BUF_LINES * (DISPLAY_COLOR_DEPTH / 8))
 
-// ─── Book-listing aliases ───────────────────────────────────────────
-// In-book listings (and the full repo sketches) use the LCD_*/TOUCH_*
-// names below; they map onto the canonical DISPLAY_*/TOUCH_* values above.
-#define LCD_WIDTH              DISPLAY_WIDTH
-#define LCD_HEIGHT             DISPLAY_HEIGHT
-#define LCD_DSI_LANE_NUM       DISPLAY_DSI_LANES
-#define LCD_DSI_LANE_RATE      DISPLAY_DSI_LANE_RATE
-#define LCD_DPI_CLK_MHZ        DISPLAY_DPI_CLK_MHZ
-#define LCD_COLOR_BITS         ESP_PANEL_LCD_COLOR_BITS_RGB565
-#define LCD_DPI_HPW            DISPLAY_HPW
-#define LCD_DPI_HBP            DISPLAY_HBP
-#define LCD_DPI_HFP            DISPLAY_HFP
-#define LCD_DPI_VPW            DISPLAY_VPW
-#define LCD_DPI_VBP            DISPLAY_VBP
-#define LCD_DPI_VFP            DISPLAY_VFP
-#define LCD_DSI_PHY_LDO_ID     DISPLAY_DSI_PHY_LDO
-#define LCD_RST_IO             DISPLAY_RST_PIN
-#define LCD_BL_IO              DISPLAY_BL_PIN
-#define LCD_BL_ON_LEVEL        1
-#define TOUCH_I2C_SDA          TOUCH_SDA
-#define TOUCH_I2C_SCL          TOUCH_SCL
-#define TOUCH_RST_IO           TOUCH_RST
-#define TOUCH_INT_IO           TOUCH_INT
-
 #endif // BOARD_CONFIG_H
