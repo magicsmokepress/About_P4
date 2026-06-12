@@ -1,49 +1,39 @@
-# Chapter 21: Sensor Dashboard
+# Chapter 21 — System Dashboard (CrowPanel Advanced 7", ESP32-P4)
 
-## Overview
-A three-tab LVGL dashboard combining BME280 environment data, live charts, and WiFi network status. Demonstrates polling multiple sensors, updating charts, and building a production-style tabbed UI.
+The bench-verified dashboard from Chapter 21. It is **panel-only** — no external
+sensors. It shows three ring gauges (CPU clock, PSRAM used, heap used), an uptime
+readout, and a live touch-coordinate panel, all on the dark theme from the book.
 
-## Hardware Required
-- CrowPanel Advanced 7" (Elecrow, ESP32-P4)
-- USB-C power cable (2A minimum)
-- Arduino IDE 2.x
-- BME280 sensor (I2C1: GPIO 45/46)
-- Two USB-C cables for WiFi stability
+This is the sketch the chapter is written around, confirmed running on real
+CrowPanel Advanced 7" hardware.
 
-## Libraries
-- [esp_display_panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)
-- [LVGL 9.x](https://lvgl.io)
-- WiFi (built-in)
+## Files
 
-## Board Settings
-```
-Board:      ESP32P4 Dev Module
-USB Mode:   Hardware CDC and JTAG
-PSRAM:      OPI PSRAM
-Flash Mode: QIO 80MHz
-Partition:  Huge APP (3MB No OTA/1MB SPIFFS)
-```
+- `dashboard.ino` — the complete sketch
+- `board_config.h` — CrowPanel Advanced 7" pin/timing constants
+- `lv_conf.h` — LVGL config with Montserrat **14 / 20 / 28** enabled
 
-## Boards Tested
-- ✅ CrowPanel Advanced 7" (Elecrow, ESP32-P4)
+## Build
 
-## How to Use
-1. Wire BME280 to I2C1 header
-2. Edit `dashboard.ino`: set `WIFI_SSID` and `WIFI_PASS`
-3. Upload; three tabs show Environment, Charts, and Network
+1. **Arduino-ESP32 core** with the **ESP32-P4** boards installed.
+2. Libraries: **ESP32_Display_Panel 1.0.4** and **LVGL 9.2.x or newer**.
+3. **Put `lv_conf.h` where LVGL looks for it** — next to the `lvgl` library
+   folder (e.g. `Arduino/libraries/lvgl/lv_conf.h`), *not* in the sketch folder.
+   Without it you get `lv_font_montserrat_20 not declared`. The copy here is the
+   reference; the active one must sit beside the library.
+4. Board settings: **ESP32P4 Dev Module**, PSRAM **OPI PSRAM**, Partition
+   **Huge APP**.
 
-## Key Concepts
-- LVGL tabview with multiple content tabs
-- lv_chart with scrolling time-series data
-- Polling multiple peripherals at different intervals
-- WiFi status display (RSSI, IP, channel)
+## The one lesson to copy
 
----
+The flush callback is asynchronous on MIPI-DSI. `drawBitmap()` starts a DMA
+transfer and returns before the pixels land, so `lv_display_flush_ready()` is
+called from the transfer-done callback via `attachDrawBitmapFinishCallback(...)`,
+never right after `drawBitmap()`. Calling it synchronously is what causes the
+flicker / washed-out colors / soft text that wrecks a first dashboard.
 
-## Getting the Book
+## Swapping in real sensors
 
-Full narrative, explanations, wiring diagrams, and troubleshooting are in the book:
-- **Gumroad:** [smokemagic.gumroad.com/l/yfcnzu](https://smokemagic.gumroad.com/l/yfcnzu)
-- **Amazon Kindle/Paperback:** search *"Programming the ESP32-P4"*
-
-_Part of the [About_P4](https://github.com/magicsmokepress/About_P4) companion repo — Magic Smoke Press_
+Replace the body of `update_metrics()` with reads from any earlier chapter (e.g.
+the BME280 from Chapter 14) and the same rings become a weather station — the
+display, touch, and flush code are unchanged.
