@@ -8,9 +8,9 @@ Skills are markdown instruction files that Claude Code loads automatically when 
 
 ## Available Skills
 
-| File | Description |
-|------|-------------|
-| `esp32-p4-arduino.md` | ESP32-P4 Arduino development — 50+ gotchas, pin mappings for 3 boards, golden config |
+| Skill | Description |
+|-------|-------------|
+| [`esp32-p4-arduino/`](esp32-p4-arduino/SKILL.md) | ESP32-P4 Arduino development — 50+ gotchas, pin mappings for 3 boards, golden config |
 
 ## Installation
 

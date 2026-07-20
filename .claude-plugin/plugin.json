@@ -1,0 +1,10 @@
+{
+  "name": "esp32-p4-arduino",
+  "version": "1.0.0",
+  "description": "Board-aware development assistant for ESP32-P4 Arduino projects (CrowPanel, Tab5, P4-ETH): 50+ known pitfalls, pin mappings, and library-version enforcement.",
+  "author": {
+    "name": "magicsmokepress",
+    "url": "https://github.com/magicsmokepress"
+  },
+  "homepage": "https://github.com/magicsmokepress/About_P4"
+}
