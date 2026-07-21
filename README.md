@@ -94,7 +94,7 @@ This project was built by consulting the internet many times — forum posts, Gi
 ## Support
 
 If this code helped you build something, learn something, or saved you from staring at a blank screen for another hour — you can say thanks:
-- **Buy the book:** [smokemagic.gumroad.com/l/yfcnzu](https://smokemagic.gumroad.com/l/yfcnzu)
+- **Buy the book:** [Paperback](https://www.amazon.com/dp/B0H5K3ZLZV) · [Kindle](https://www.amazon.com/dp/B0H4NGCF5X)
 - **PayPal:** [paypal.me/magicsmokepress](https://paypal.me/magicsmokepress)
 - **Buy me a coffee:** [buymeacoffee.com/magicsmokepress](https://buymeacoffee.com/magicsmokepress)
 
