@@ -132,6 +132,6 @@ individual demos. The work stands on:
 
 ## License
 
-Copyright (c) 2026 Marko Vasilj. The code in this repository is released under the [MIT License](LICENSE) — you are free to use, modify, and distribute it. The only requirement is that you comply with the licenses of the third-party libraries the sketches depend on (LVGL, LovyanGFX, ESP-DSP, PubSubClient, etc.). See the LICENSE file for details.
+Copyright (c) 2026 Magic Smoke Press. The code in this repository is released under the [MIT License](LICENSE) — you are free to use, modify, and distribute it. The only requirement is that you comply with the licenses of the third-party libraries the sketches depend on (LVGL, LovyanGFX, ESP-DSP, PubSubClient, etc.). See the LICENSE file for details.
 
 Written with AI assistance. All code tested on real hardware by a human.
