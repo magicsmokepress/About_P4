@@ -128,7 +128,7 @@ individual demos. The work stands on:
 
 **Similar independent P4 collections**
 
-- **[ESP32-P4-Pico-Demo](https://github.com/CIRCUITSTATE/ESP32-P4-Pico-Demo)**, **[ESP32-P4-minimal-DSI-demo](https://github.com/PavelMostovoy/ESP32-P4-minimal-DSI-demo)**, **[M5Dashboard](https://github.com/XueshiQiao/M5Dashboard)** — mostly vendor-specific or single-feature, versus About_P4's cross-board teaching progression.
+- **[ESP32-P4-Pico-Demo](https://github.com/CIRCUITSTATE/ESP32-P4-Pico-Demo)**, **[ESP32-P4-minimal-DSI-demo](https://github.com/PavelMostovoy/ESP32-P4-minimal-DSI-demo)**, **[M5Dashboard](https://github.com/XueshiQiao/M5Dashboard)**.
 
 ## License
 
