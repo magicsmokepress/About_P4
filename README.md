@@ -104,6 +104,32 @@ Either way, go build something. That's the best thank you.
 
 Za vas par koji ste se našli tu, slučajno ili ne — pretpostavljam da znate engleski da ste pročitali sve gore navedeno. Ako ne, javite mi se pa ću to napisati i na "naški." Ali ozbiljno, ako ste iz Hrvatske, Bosne & Hercegovine, Srbije ili Crne Gore i želite izdanje na naškom možda bude. Razumijemo se — bez obzira dal je ova knjiga lijepa, ljepa, lipa ili lepa. Javite se.
 
+## Prior Art & Related Resources
+
+ESP32-P4 Arduino/ESP-IDF example material is well-established. About_P4's
+contribution is *curation* — 36 book-companion sketches unified across three P4
+boards, progressing from first blink to TFLite and DSP — rather than novel
+individual demos. The work stands on:
+
+**Official platform (Espressif)**
+
+- **[arduino-esp32](https://github.com/espressif/arduino-esp32)** — the Arduino core these sketches compile against (ESP32-P4 support from v3.1.x).
+- **[esp-idf](https://github.com/espressif/esp-idf)** / **[esp-dev-kits](https://github.com/espressif/esp-dev-kits)** — the official framework and Espressif board BSPs/examples.
+
+**Board-vendor demos (About_P4's three target boards)**
+
+- **[Waveshare ESP32-P4-Platform](https://github.com/waveshareteam/ESP32-P4-Platform)** — Waveshare's P4 example collection (matches the ESP32-P4-ETH target).
+- **[M5Tab5-UserDemo](https://github.com/m5stack/M5Tab5-UserDemo)** — official M5Stack Tab5 (P4) firmware.
+- **[CrowPanel Advanced 7" ESP32-P4](https://github.com/Elecrow-RD/CrowPanel-Advanced-7inch-ESP32-P4-HMI-AI-Display-1024x600-IPS-Touch-Screen)** — Elecrow's examples for About_P4's primary board.
+
+**Key dependencies (enabling prior work)**
+
+- **[ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)**, **[LovyanGFX](https://github.com/lovyan03/LovyanGFX)**, **[LVGL](https://github.com/lvgl/lvgl)**, **[ESP-DSP](https://github.com/espressif/esp-dsp)**.
+
+**Similar independent P4 collections**
+
+- **[ESP32-P4-Pico-Demo](https://github.com/CIRCUITSTATE/ESP32-P4-Pico-Demo)**, **[ESP32-P4-minimal-DSI-demo](https://github.com/PavelMostovoy/ESP32-P4-minimal-DSI-demo)**, **[M5Dashboard](https://github.com/XueshiQiao/M5Dashboard)** — mostly vendor-specific or single-feature, versus About_P4's cross-board teaching progression.
+
 ## License
 
 Copyright (c) 2026 Marko Vasilj. The code in this repository is released under the [MIT License](LICENSE) — you are free to use, modify, and distribute it. The only requirement is that you comply with the licenses of the third-party libraries the sketches depend on (LVGL, LovyanGFX, ESP-DSP, PubSubClient, etc.). See the LICENSE file for details.
